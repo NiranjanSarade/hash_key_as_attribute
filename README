@@ -46,7 +46,7 @@ gem install hash_key_as_attribute
 
 OR
 
-Download the gem file from http://github.com/NiranjanSarade/hash_key_as_attribute.git/
+Download the gem file from http://github.com/NiranjanSarade/hash_key_as_attribute/
 gem install hash_key_as_attribute-0.0.1.gem
 
 
