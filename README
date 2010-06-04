@@ -1,0 +1,57 @@
+Author
+====
+Niranjan Sarade
+
+About the utility - HashKeyAsAttribute
+====
+
+In ruby, we have OpenStruct which allows the creation of data objects with arbitrary attributes.
+With ruby's metaprogramming capability, we can also allow hash values to be set and retrieved as if
+they were its attributes. So setting and getting the value for the key would be treated as if they
+were method calls on the hash object.
+If the key does not correspond to any hash entry, it should return “The key does not correspond to any hash entry” message.
+The hook that has been used is Kernel's method_missing.
+
+Example
+====
+
+require 'hash_key_as_attribute'
+
+h = {}
+h.one = 1
+puts h.one #=> 1
+
+h.two= [1,2,3,4]
+puts h.two.inspect #=> [1,2,3,4]
+
+puts h.three #=> "The key does not correspond to any hash entry"
+
+puts h.inspect #=> {:one=>1, :two=>[1, 2, 3, 4]}
+
+h2 = {}
+h2.four = 4
+
+h.three = h2
+
+puts h.three.inspect #=> {:four=>4}
+
+puts h.three.four #=> 4 
+
+
+Install
+====
+gem install hash_key_as_attribute
+
+(It has been pushed to http://gemcutter.org)
+
+OR
+
+Download the gem file from http://github.com/NiranjanSarade/hash_key_as_attribute.git/
+gem install hash_key_as_attribute-0.0.1.gem
+
+
+Uninstall
+====
+gem uninstall hash_key_as_attribute
+
+
